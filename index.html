@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+    <title>Developer Test</title>
+    <script src="lib/angular.min.js" type="text/javascript"></script>
+    
+</head>
+<body ng-app="DeviceReportApp">
+	<div ng-controller="DeviceController">
+		<table id="grid" border="1" cellpadding="4">
+			<thead>
+				<tr>
+					<th>Device Name</th>
+					<th>Report Date</th>
+					<th>Latitude</th>
+					<th>Longitude</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Fill me in with data from the datasource.js object code -->
+				<tr ng-repeat="report in reports">
+					<td>{{ report.deviceName }}</td>
+					<td>{{ report.reportDate }}</td>
+					<td>{{ report.latitude }}</td>
+					<td>{{ report.longitude }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="button" data-ng-click="startReporting()">Report</button>
+		<button type="button" data-ng-click="stopReporting()">Stop</button>
+	</div>
+	
+	<!-- Modules -->
+    <script src="scripts/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="scripts/controllers/DeviceController.js"></script>
+
+</body>
+</html>
